@@ -32,20 +32,20 @@ def submit_function(file_directory_path,master_file_path,test_name_entry,subject
     if len(file_directory_path.get()) == 0 or len(master_file_path.get()) == 0:
         if any_message:
             old_message.destroy()
-            old_message = Message(main_frame,text='please provide directory path and master file path',width=600,bg='lavender',highlightbackground='deepskyblue',highlightthickness=2)
+            old_message = Message(main_frame,text='please provide directory path and master file path', font=smallfont,highlightbackground='crimson', width=1000,highlightthickness=2)
             old_message.pack()
         else:
             any_message = True
-            old_message = Message(main_frame,text='please provide directory path and master file path',width=600,bg='lavender',highlightbackground='deepskyblue',highlightthickness=2)
+            old_message = Message(main_frame,text='please provide directory path and master file path', font=smallfont,highlightbackground='crimson', width=1000,highlightthickness=2)
             old_message.pack()
     elif len(test_name_entry.get()) == 0 or len(subject_name_entry.get()) == 0 or len(class_name_entry.get()) == 0:
         if any_message:
             old_message.destroy()
-            old_message = Message(main_frame,text='please provide test name, subject name and class name',width=600,bg='lavender',highlightbackground='deepskyblue',highlightthickness=2)
+            old_message = Message(main_frame,text='please provide test name, subject name and class name', font=smallfont,highlightbackground='crimson', width=1000,highlightthickness=2)
             old_message.pack()
         else:
             any_message = True
-            old_message = Message(main_frame,text='please provide test name, subject name and class name',width=600,bg='lavender',highlightbackground='deepskyblue',highlightthickness=2)
+            old_message = Message(main_frame,text='please provide test name, subject name and class name', font=smallfont,highlightbackground='crimson', width=1000,highlightthickness=2)
             old_message.pack()
     else:
         set_csv_file_name(test_name_entry,subject_name_entry,class_name_entry)
@@ -66,7 +66,7 @@ def submit_function(file_directory_path,master_file_path,test_name_entry,subject
                 add_to_csv(file,marked,total)
         if any_message:
             old_message.destroy()
-        Message(main_frame,text='Marks have been successfully uploaded',width=500).pack()
+        Message(main_frame,text='Marks have been successfully uploaded',font=smallfont,width=1000).pack()
 
 def choose_master_file(master_file_path):
     global master_key_name,master_key_path
@@ -89,7 +89,7 @@ def frame3():
     detail.grid(row=0,column=0)
 
 def frame2(image_path,name):
-    img = ImageTk.PhotoImage(Image.open(image_path).resize((350,400),Image.ANTIALIAS))
+    img = ImageTk.PhotoImage(Image.open(image_path).resize((350,400)))
     image_box = Label(second_frame,image=img)
     image_box.image = img
     image_box.pack()

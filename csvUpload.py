@@ -1,5 +1,5 @@
 import csv
-
+import os
 csv_file_name = None
 
 def add_to_csv(file,marked,total):
@@ -7,7 +7,8 @@ def add_to_csv(file,marked,total):
     for i in marked:
         lst.append(f"opt : {marked[i]}")
     lst.append(total)
-    with open(f'c:/Users/ASUS/Documents/{csv_file_name}.csv','a',newline='') as f:
+    csv_path = os.getcwd()+'/'+csv_file_name+'.csv'
+    with open(csv_path,'a',newline='') as f:
         obj = csv.writer(f)
         obj.writerows([lst])
         f.close()
@@ -17,7 +18,8 @@ def create_csv():
     for i in range(1,101):
         lst.append(f"Ques {i}")
     lst.append('TOTAL')
-    with open(f'c:/Users/ASUS/Documents/{csv_file_name}.csv','w',newline='') as f:
+    csv_path = os.getcwd()+'/'+csv_file_name+'.csv'
+    with open(csv_path,'w',newline='') as f:
         obj = csv.writer(f)
         obj.writerows([lst])
 

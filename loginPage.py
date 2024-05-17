@@ -31,11 +31,11 @@ def authenticate_user():
         global old_message,any_message
         if any_message:
             old_message.destroy()
-            old_message = Message(main_window,text='Invalid Username or Password!',width=500,font=smallfont,bg='lavender',highlightbackground='deepskyblue',highlightthickness=2)
+            old_message = Message(main_window,text='Invalid Username or Password!',width=1000,font=smallfont,bg='lavender',highlightbackground='crimson',highlightthickness=2)
             old_message.pack(before=login_frame)
         else:
             any_message = True
-            old_message = Message(main_window,text='Invalid Username or Password!',width=500,font=smallfont,bg='lavender',highlightbackground='deepskyblue',highlightthickness=2)
+            old_message = Message(main_window,text='Invalid Username or Password!',width=1000,font=smallfont,bg='lavender',highlightbackground='crimson',highlightthickness=2)
             old_message.pack(before=login_frame)
 
 # setup login frame with heading and entry fields
@@ -88,11 +88,11 @@ if __name__ == '__main__':
     username_entry,password_entry = setup_login_frame()
 
     # create bottom frame
-    bottom_frame = Frame(main_window,bg='lavender',highlightbackground='deepskyblue',highlightthickness=2)
-    bottom_frame.pack(pady=120)
+    bottom_frame = Frame(main_window,bg='lavender')
+    bottom_frame.pack(pady=60)
 
     # setup bottom frame with developer details
-    detail = Label(bottom_frame,text='developed by atharva',bg='lavender',height=6,width=80,font=largefont)
+    detail = Label(bottom_frame,text='Developed by Atharva Vishwakarma',bg='lavender',height=4,width=80,font=largefont)
     detail.pack()
 
     # to display main_window

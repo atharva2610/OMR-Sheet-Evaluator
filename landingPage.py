@@ -85,7 +85,7 @@ def choose_directory(file_directory_path):
     file_directory_path.insert(0,path)
 
 def frame3():
-    detail = Label(third_frame,text='developed by atharva',bg='lavender',height=6,width=80,font=largefont)
+    detail = Label(third_frame,text='Developed by Atharva Vishwakarma',bg='lavender',height=4,width=80,font=largefont)
     detail.grid(row=0,column=0)
 
 def frame2(image_path,name):
@@ -97,7 +97,7 @@ def frame2(image_path,name):
     image_name.pack()
 
 def frame1():
-    file_directory_label = Label(first_frame,text='add directory: ',bg='lavender',font=smallfont)
+    file_directory_label = Label(first_frame,text='Select Images Folder: ',bg='lavender',font=smallfont)
     file_directory_label.grid(row=0,column=0)
 
     file_directory_path = Entry(first_frame,width=60,font=smallfont)
@@ -105,24 +105,24 @@ def frame1():
     file_directory_browse_button = Button(first_frame,text='Browse',width=10,bg='hotpink',font=smallfont,command=lambda:choose_directory(file_directory_path))
     file_directory_browse_button.grid(row=0,column=2,padx=10)
 
-    master_file_label = Label(first_frame,text='add master file: ',bg='lavender',font=smallfont)
+    master_file_label = Label(first_frame,text='Select Master Image: ',bg='lavender',font=smallfont)
     master_file_label.grid(row=1,column=0)
     master_file_path = Entry(first_frame,width=60,font=smallfont)
     master_file_path.grid(row=1,column=1,ipady=2,pady=20)
     master_file_browse_button = Button(first_frame,text='Browse',width=10,bg='deepskyblue',font=smallfont,command=lambda:choose_master_file(master_file_path))
     master_file_browse_button.grid(row=1,column=2)
 
-    test_name_label = Label(first_frame,text='name of test: ',bg='lavender',font=smallfont)
+    test_name_label = Label(first_frame,text='Test Name: ',bg='lavender',font=smallfont)
     test_name_label.grid(row=2,column=0)
     test_name_entry = Entry(first_frame,width=20,font=smallfont)
     test_name_entry.grid(row=2,column=1,ipady=2,pady=20,sticky=W)
 
-    subject_name_label = Label(first_frame,text='subject: ',bg='lavender',font=smallfont)
+    subject_name_label = Label(first_frame,text='Subject: ',bg='lavender',font=smallfont)
     subject_name_label.grid(row=3,column=0)
     subject_name_entry = Entry(first_frame,width=20,font=smallfont)
     subject_name_entry.grid(row=3,column=1,ipady=2,pady=20,sticky=W)
 
-    class_name_label = Label(first_frame,text='class name: ',bg='lavender',font=smallfont)
+    class_name_label = Label(first_frame,text='Class Name: ',bg='lavender',font=smallfont)
     class_name_label.grid(row=4,column=0)
     class_name_entry = Entry(first_frame,width=20,font=smallfont)
     class_name_entry.grid(row=4,column=1,ipady=2,pady=20,sticky=W)
@@ -143,7 +143,7 @@ def start_display():
     second_frame.grid(row=1,column=1,pady=40)
     frame1()
 
-    third_frame = Frame(main_window,bg='lavender',highlightbackground='deepskyblue',highlightthickness=2)
+    third_frame = Frame(main_window,bg='lavender')
     third_frame.grid(row=2,column=0,columnspan=2,pady=30,padx=100)
     frame3()
 
